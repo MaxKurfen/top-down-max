@@ -1,3 +1,58 @@
 [gd_scene format=3 uid="uid://lupj3eq4l1s6"]
 
+[ext_resource type="Script" uid="uid://b22a0kyt42tgf" path="res://script/jogador.gd" id="1_q2130"]
+[ext_resource type="Texture2D" uid="uid://e5bn1tvts5fg" path="res://assets/Skins.png" id="2_4obgb"]
+[ext_resource type="Texture2D" uid="uid://jb0q0426dn86" path="res://assets/Weapons.png" id="3_j3kwt"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32758"]
+radius = 71.0
+height = 146.0
+
 [node name="Jogador" type="CharacterBody2D" unique_id=874800274]
+script = ExtResource("1_q2130")
+metadata/_edit_vertical_guides_ = [-122.0]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145881769]
+shape = SubResource("CapsuleShape2D_32758")
+
+[node name="sprite" type="Node2D" parent="." unique_id=1867438873]
+position = Vector2(1, 1)
+rotation = -1.629017
+scale = Vector2(0.5, 0.5)
+
+[node name="corpo" type="Sprite2D" parent="sprite" unique_id=181273263]
+position = Vector2(1, 0)
+texture = ExtResource("2_4obgb")
+region_enabled = true
+region_rect = Rect2(1971, 300, 197, 105)
+
+[node name="mochila" type="Sprite2D" parent="sprite" unique_id=2052238813]
+position = Vector2(3, -69)
+texture = ExtResource("2_4obgb")
+region_enabled = true
+region_rect = Rect2(1971, 146, 197, 132)
+
+[node name="bracoesquerdo" type="Sprite2D" parent="sprite" unique_id=860595868]
+position = Vector2(-90, 27)
+texture = ExtResource("2_4obgb")
+region_enabled = true
+region_rect = Rect2(2421, 156, 103, 198)
+
+[node name="bracodireito" type="Sprite2D" parent="sprite" unique_id=1817315459]
+position = Vector2(81, 55)
+texture = ExtResource("2_4obgb")
+region_enabled = true
+region_rect = Rect2(2601, 139, 132, 242)
+
+[node name="cabeca" type="Sprite2D" parent="sprite" unique_id=62147356]
+texture = ExtResource("2_4obgb")
+region_enabled = true
+region_rect = Rect2(3187, 130, 165, 164)
+
+[node name="arma" type="Sprite2D" parent="sprite" unique_id=23126520]
+position = Vector2(-13, 265)
+rotation = 0.031826824
+texture = ExtResource("3_j3kwt")
+region_enabled = true
+region_rect = Rect2(1478, 445, 71, 365)
+region_filter_clip_enabled = true
