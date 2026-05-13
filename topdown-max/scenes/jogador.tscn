@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://b22a0kyt42tgf" path="res://script/jogador.gd" id="1_q2130"]
 [ext_resource type="Texture2D" uid="uid://e5bn1tvts5fg" path="res://assets/Skins.png" id="2_4obgb"]
+[ext_resource type="PackedScene" uid="uid://bv6gusjvubd5x" path="res://scenes/bala.tscn" id="2_qcln2"]
 [ext_resource type="Texture2D" uid="uid://jb0q0426dn86" path="res://assets/Weapons.png" id="3_j3kwt"]
+[ext_resource type="AudioStream" uid="uid://mi168f6lyo2d" path="res://assets/ribhavagrawal-laser-shot-ingame-230500.ogg" id="5_s760d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_32758"]
 radius = 71.0
@@ -10,10 +12,8 @@ height = 146.0
 
 [node name="Jogador" type="CharacterBody2D" unique_id=874800274]
 script = ExtResource("1_q2130")
+bala_cena = ExtResource("2_qcln2")
 metadata/_edit_vertical_guides_ = [-122.0]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145881769]
-shape = SubResource("CapsuleShape2D_32758")
 
 [node name="sprite" type="Node2D" parent="." unique_id=1867438873]
 position = Vector2(1, 1)
@@ -56,3 +56,14 @@ texture = ExtResource("3_j3kwt")
 region_enabled = true
 region_rect = Rect2(1478, 445, 71, 365)
 region_filter_clip_enabled = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1145881769]
+shape = SubResource("CapsuleShape2D_32758")
+
+[node name="pontadaarma" type="Marker2D" parent="." unique_id=946251138]
+position = Vector2(219, -2)
+
+[node name="som_tiro" type="AudioStreamPlayer2D" parent="." unique_id=275344170]
+stream = ExtResource("5_s760d")
+volume_db = 6.753
+pitch_scale = 0.48
