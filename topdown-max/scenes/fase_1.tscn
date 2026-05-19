@@ -1,8 +1,13 @@
 [gd_scene format=3 uid="uid://mdsyp13ygnds"]
 
 [ext_resource type="PackedScene" uid="uid://lupj3eq4l1s6" path="res://scenes/jogador.tscn" id="1_8dnef"]
+[ext_resource type="PackedScene" uid="uid://cltkgyx8c6uwo" path="res://scenes/zumbi.tscn" id="2_ugoy3"]
 
 [node name="Fase 1" type="Node2D" unique_id=117695150]
 
 [node name="Jogador" parent="." unique_id=874800274 instance=ExtResource("1_8dnef")]
 position = Vector2(101, 330)
+
+[node name="zumbi" parent="." unique_id=1777161551 node_paths=PackedStringArray("jogador") instance=ExtResource("2_ugoy3")]
+position = Vector2(781, 344)
+jogador = NodePath("../Jogador")

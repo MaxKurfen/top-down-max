@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://cltkgyx8c6uwo"]
+
+[ext_resource type="Script" uid="uid://eolfk00juaa1" path="res://script/zumbi.gd" id="1_ijhqn"]
+[ext_resource type="Texture2D" uid="uid://e5bn1tvts5fg" path="res://assets/Skins.png" id="1_jqnwo"]
+[ext_resource type="Texture2D" uid="uid://dbpnkwuvq7a7f" path="res://assets/10 Sem Título_20260512105113.png" id="2_d0eqg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf4gh"]
+size = Vector2(65, 111)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_32ssj"]
+size = Vector2(84, 126)
+
+[node name="zumbi" type="CharacterBody2D" unique_id=1777161551]
+script = ExtResource("1_ijhqn")
+
+[node name="Node2D" type="Node2D" parent="." unique_id=832942132]
+scale = Vector2(0.8, 0.8)
+
+[node name="corpo" type="Sprite2D" parent="Node2D" unique_id=1764861157]
+position = Vector2(3.0000014, -7.999995)
+rotation = 4.70578
+scale = Vector2(0.73460627, 0.66684496)
+texture = ExtResource("1_jqnwo")
+region_enabled = true
+region_rect = Rect2(2971, 299, 197, 105)
+
+[node name="braco E" type="Sprite2D" parent="Node2D" unique_id=984637881]
+position = Vector2(74.62503, -68.12501)
+rotation = 1.5685022
+scale = Vector2(0.25690356, 0.20889305)
+texture = ExtResource("2_d0eqg")
+region_enabled = true
+region_rect = Rect2(504, 275, 206, 666)
+
+[node name="braco D" type="Sprite2D" parent="Node2D" unique_id=859003506]
+position = Vector2(74.375, 46.875)
+rotation = 1.5789446
+scale = Vector2(0.23505512, 0.2041111)
+texture = ExtResource("2_d0eqg")
+region_enabled = true
+region_rect = Rect2(1290, 275, 206, 666)
+
+[node name="cabeca" type="Sprite2D" parent="Node2D" unique_id=445756811]
+position = Vector2(6.4999976, -10.5)
+rotation = 0.004132832
+scale = Vector2(0.22187169, 0.21894918)
+texture = ExtResource("2_d0eqg")
+region_enabled = true
+region_rect = Rect2(819, 873, 434, 426)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1469882141]
+position = Vector2(6.5, -4.5)
+shape = SubResource("RectangleShape2D_cf4gh")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=80555052]
+
+[node name="dano" type="CollisionShape2D" parent="Area2D" unique_id=1504665349]
+position = Vector2(71, -7)
+shape = SubResource("RectangleShape2D_32ssj")
+debug_color = Color(0.98935634, 0, 0.29682514, 0.41960785)
