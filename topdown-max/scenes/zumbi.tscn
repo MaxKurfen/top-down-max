@@ -10,7 +10,7 @@ size = Vector2(65, 111)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32ssj"]
 size = Vector2(84, 126)
 
-[node name="zumbi" type="CharacterBody2D" unique_id=1777161551]
+[node name="zumbi" type="CharacterBody2D" unique_id=1777161551 groups=["inimigos"]]
 script = ExtResource("1_ijhqn")
 
 [node name="Node2D" type="Node2D" parent="." unique_id=832942132]
@@ -58,3 +58,5 @@ shape = SubResource("RectangleShape2D_cf4gh")
 position = Vector2(71, -7)
 shape = SubResource("RectangleShape2D_32ssj")
 debug_color = Color(0.98935634, 0, 0.29682514, 0.41960785)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

@@ -10,7 +10,7 @@
 radius = 71.0
 height = 146.0
 
-[node name="Jogador" type="CharacterBody2D" unique_id=874800274]
+[node name="Jogador" type="CharacterBody2D" unique_id=874800274 groups=["players"]]
 script = ExtResource("1_q2130")
 bala_cena = ExtResource("2_qcln2")
 metadata/_edit_vertical_guides_ = [-122.0]

@@ -30,8 +30,9 @@ func disparar():
 	get_tree().current_scene.add_child(nova_bala)
 	#som do tiro
 	som_tiro.play()
-	
-
 	#mover com o mause
 func rotacionar_corpo():
 	look_at(get_global_mouse_position())
+	
+func tomar_dano():
+	self.queue_free()
