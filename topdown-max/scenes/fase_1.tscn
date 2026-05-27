@@ -1,13 +1,34 @@
 [gd_scene format=3 uid="uid://mdsyp13ygnds"]
 
 [ext_resource type="PackedScene" uid="uid://lupj3eq4l1s6" path="res://scenes/jogador.tscn" id="1_8dnef"]
+[ext_resource type="Script" uid="uid://3y5eeqtjmkdu" path="res://script/fase_1.gd" id="1_u5pyp"]
 [ext_resource type="PackedScene" uid="uid://cltkgyx8c6uwo" path="res://scenes/zumbi.tscn" id="2_ugoy3"]
 
 [node name="Fase 1" type="Node2D" unique_id=117695150]
+script = ExtResource("1_u5pyp")
 
 [node name="Jogador" parent="." unique_id=874800274 instance=ExtResource("1_8dnef")]
-position = Vector2(101, 330)
+position = Vector2(114, 324)
 
 [node name="zumbi" parent="." unique_id=1777161551 node_paths=PackedStringArray("jogador") instance=ExtResource("2_ugoy3")]
 position = Vector2(781, 344)
 jogador = NodePath("../Jogador")
+
+[node name="Timer" type="Timer" parent="." unique_id=2130985180]
+autostart = true
+
+[node name="SpawnPoints" type="Node2D" parent="." unique_id=1696385026]
+
+[node name="spawn1" type="Marker2D" parent="SpawnPoints" unique_id=195672157]
+position = Vector2(515, 549)
+
+[node name="spawn2" type="Marker2D" parent="SpawnPoints" unique_id=60926696]
+position = Vector2(483, 63)
+
+[node name="spawn3" type="Marker2D" parent="SpawnPoints" unique_id=339182949]
+position = Vector2(979, 512)
+
+[node name="spawn4" type="Marker2D" parent="SpawnPoints" unique_id=1716531123]
+position = Vector2(951, 85)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
