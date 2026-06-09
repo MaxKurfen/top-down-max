@@ -10,6 +10,18 @@ size = Vector2(65, 111)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_32ssj"]
 size = Vector2(84, 126)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ijhqn"]
+bg_color = Color(0.7442131, 0.10837356, 0.11406081, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cf4gh"]
+bg_color = Color(0, 0.52337223, 0.17204002, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 1
+border_width_bottom = 2
+border_color = Color(0.26429126, 0.1196044, 0.054786474, 1)
+border_blend = true
+
 [node name="zumbi" type="CharacterBody2D" unique_id=1777161551 groups=["inimigos"]]
 script = ExtResource("1_ijhqn")
 
@@ -58,5 +70,16 @@ shape = SubResource("RectangleShape2D_cf4gh")
 position = Vector2(71, -7)
 shape = SubResource("RectangleShape2D_32ssj")
 debug_color = Color(0.98935634, 0, 0.29682514, 0.41960785)
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=2069817315]
+offset_left = -58.975533
+offset_top = 82.937355
+offset_right = 126.01183
+offset_bottom = 105.937355
+rotation = -1.5730885
+theme_override_styles/background = SubResource("StyleBoxFlat_ijhqn")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cf4gh")
+max_value = 18.0
+value = 10.0
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
