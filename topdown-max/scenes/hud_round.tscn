@@ -22,5 +22,6 @@ theme_override_font_sizes/font_size = 22
 text = "Round:"
 
 [node name="Cronometro Round" type="Timer" parent="." unique_id=1383694387]
+autostart = true
 
 [connection signal="timeout" from="Cronometro Round" to="." method="_on_cronometro_round_timeout"]

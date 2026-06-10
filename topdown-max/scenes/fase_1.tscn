@@ -21,13 +21,13 @@ autostart = true
 [node name="SpawnPoints" type="Node2D" parent="." unique_id=1696385026]
 
 [node name="spawn1" type="Marker2D" parent="SpawnPoints" unique_id=195672157]
-position = Vector2(515, 549)
+position = Vector2(1032, 347)
 
 [node name="spawn2" type="Marker2D" parent="SpawnPoints" unique_id=60926696]
-position = Vector2(483, 63)
+position = Vector2(1020, 211)
 
 [node name="spawn3" type="Marker2D" parent="SpawnPoints" unique_id=339182949]
-position = Vector2(979, 512)
+position = Vector2(979, 562)
 
 [node name="spawn4" type="Marker2D" parent="SpawnPoints" unique_id=1716531123]
 position = Vector2(951, 85)

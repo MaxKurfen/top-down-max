@@ -2,8 +2,12 @@ extends CanvasLayer
 var TempoMaximo = 60
 var TempoPassado = 0
 @onready var tempo_round = $"tempo do round"
+@onready var round_atual = $"round atual"
 func _ready() -> void: 
 	atualizar_relogio()
+	atualizar_round()
+func atualizar_round():
+	round_atual.text = "round: "+ str(Global.round)
 func _on_cronometro_round_timeout() -> void:
 	TempoPassado += 1
 	atualizar_relogio()
@@ -22,3 +26,8 @@ func atualizar_relogio():
 	else:
 		tempo_segundos = str(tempo_segundos)
 	tempo_round.text = tempo_minutos+":"+tempo_segundos
+	if diferenca_tempo <= 0 :
+		fim_do_round()
+func fim_do_round():
+	Global.round +=1
+	get_tree().reload_current_scene()

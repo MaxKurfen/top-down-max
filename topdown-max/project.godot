@@ -15,6 +15,10 @@ run/main_scene="uid://lupj3eq4l1s6"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="res://assets/icon.svg"
 
+[autoload]
+
+Global="*uid://da5edcgguumxu"
+
 [global_group]
 
 inimigos=""
